@@ -24,6 +24,8 @@ jobs:
           node-version: '22.x'
 
       - name: npm install, build, and test
+        env: 
+          CONFIG_MONGO_URI: ${{ secrets.CONFIG_MONGO_URI }}
         run: |
           npm install
           npm run build --if-present
